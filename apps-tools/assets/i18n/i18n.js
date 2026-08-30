@@ -72,9 +72,10 @@
             if (parentName === "SCRIPT" || parentName === "STYLE") return;
             var raw = textNode.nodeValue;
             var trimmed = raw.trim();
-            var key = mapping[trimmed];
+            var key = mapping[trimmed.replace(/\s+/g, " ")];
             if (!key) return;
-            textNode.nodeValue = raw.replace(trimmed, translate(key));
+            textNode.nodeValue = (raw.match(/^\s*/) || [""])[0] + translate(key) +
+                (raw.match(/\s*$/) || [""])[0];
         });
     }
 

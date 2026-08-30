@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="../assets/popupstack.css?1" type="text/css" onerror="location.reload()" />
     <link rel="stylesheet" href="../assets/help-system/help-system.css?1" type="text/css" onerror="location.reload()" />
     <link rel="stylesheet" href="css/style.css?2" onerror="location.reload()">
+    <link rel="stylesheet" href="../assets/i18n/i18n.css?2">
     <script src="../assets/jquery/jquery-2.1.3.min.js?1" onerror="location.reload()"></script>
     <script src="../assets/jquery/jquery-ui.min.js?1" onerror="location.reload()"></script>
     <script src="../assets/jquery/jquery.ui.touch-punch.min.js?1" onerror="location.reload()"></script>
@@ -32,6 +33,19 @@
     <script src="../assets/popupstack.js?1 onerror=" location.reload() ""></script>
     <script src="../assets/help-system/help-system.js?1" onerror="location.reload()"></script>
     <script src="../assets/imageLoader.js?1" onerror="location.reload()"></script>
+    <script src="../assets/i18n/i18n.js?2"></script>
+    <script src="../assets/i18n/locales/en.js?2"></script>
+    <script src="../assets/i18n/locales/zh-CN.js?2"></script>
+    <script src="locales/en.js?1"></script>
+    <script src="locales/zh-CN.js?1"></script>
+    <script src="locales/map.js?1"></script>
+    <script>
+        RP_I18N.init({ selector: false });
+        document.addEventListener("DOMContentLoaded", function () {
+            RP_I18N.applyTextMap(document.body, window.SCPI_I18N_TEXT_MAP);
+            RP_I18N.mountSelector();
+        });
+    </script>
     <script src="js/help-scpi.js?1" onerror="location.reload()"></script>
     <script src="js/manager.js?4?1" onerror="location.reload()"></script>
 
