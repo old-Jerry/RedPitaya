@@ -64,7 +64,7 @@
                         <img class="logo" width=110 src="../assets/images/navigation_logo.png">
                     </div>
                     <div class="logo-network-manager">
-                        RedPitaya Network Manager
+                        Red Pitaya 网络管理
                     </div>
                 </div>
             </div>
@@ -74,40 +74,40 @@
                     <div id="eth0_block" class="net_settings_block" align=center>
                         <div>
                             <div style="position: absolute;"><img src="img/net-icons/lan.png"></div>
-                            <div>Wired connection status</div>
+                            <div>有线网络状态</div>
                         </div>
                         <div id="eth0_status_result" class="eht0_entries" style="display: block;">
                             <dev id="eth0_status">
                                 <div id="eth0_inputs_labels" class="status_labels" style="min-height: 125px;">
-                                    <div style="font-size: 15pt; padding-top: 10px;">Address:</div>
-                                    <div style="font-size: 15pt; padding-top: 10px;">Mask:</div>
-                                    <div style="font-size: 15pt; padding-top: 10px;">Gateway:</div>
+                                    <div style="font-size: 15pt; padding-top: 10px;">IP 地址：</div>
+                                    <div style="font-size: 15pt; padding-top: 10px;">子网掩码：</div>
+                                    <div style="font-size: 15pt; padding-top: 10px;">网关：</div>
                                 </div>
                                 <div id="eth0_inputs_entry" class="status_entry" style="min-height: 125px;">
                                     <div style="padding-top: 10px;">
-                                        <label id="eth0_address_label" style="font-size: 13pt;">None</label>
+                                        <label id="eth0_address_label" style="font-size: 13pt;">无</label>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label id="eth0_mask_label" style="font-size: 13pt;">None</label>
+                                        <label id="eth0_mask_label" style="font-size: 13pt;">无</label>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label id="eth0_gateway_label" style="font-size: 13pt;">None</label>
+                                        <label id="eth0_gateway_label" style="font-size: 13pt;">无</label>
                                     </div>
                                 </div>
                             </dev>
                             <div style="height: 30px;"></div>
                             <select id="eth0_mode" class="form-control type_select">
-                                <option value="#eth0_dhcp_mode">DHCP Client</option>
-                                <option value="#eth0_dhcp_server_mode">DHCP Server</option>
-                                <option value="#eth0_static_mode">Static</option>
+                                <option value="#eth0_dhcp_mode">DHCP 客户端</option>
+                                <option value="#eth0_dhcp_server_mode">DHCP 服务器</option>
+                                <option value="#eth0_static_mode">静态地址</option>
                             </select>
                             <div id="eth0_static_mode" style="display: none;">
                                 <dev id="eth0_inputs">
                                     <div id="eth0_inputs_labels" class="status_labels">
-                                        <div style="font-size: 15pt; padding-top: 10px;">IP address:</div>
-                                        <div style="font-size: 15pt; padding-top: 10px;">Mask:</div>
-                                        <div style="font-size: 15pt; padding-top: 10px;">Gateway:</div>
-                                        <div style="font-size: 15pt; padding-top: 10px;">DNS:</div>
+                                        <div style="font-size: 15pt; padding-top: 10px;">IP 地址：</div>
+                                        <div style="font-size: 15pt; padding-top: 10px;">子网掩码：</div>
+                                        <div style="font-size: 15pt; padding-top: 10px;">网关：</div>
+                                        <div style="font-size: 15pt; padding-top: 10px;">DNS：</div>
                                     </div>
                                     <div id="eth0_inputs_entry" class="status_entry">
                                         <div style="padding-top: 6px;">
@@ -132,9 +132,9 @@
                             <div id="eth0_dhcp_server_mode" style="display: none;">
                                 <dev id="eth0_inputs">
                                     <div id="eth0_inputs_labels" class="status_labels">
-                                        <div style="font-size: 15pt; padding-top: 10px;">IP address:</div>
-                                        <div style="font-size: 15pt; padding-top: 10px;">Mask:</div>
-                                        <div style="font-size: 15pt; padding-top: 10px;">DNS:</div>
+                                        <div style="font-size: 15pt; padding-top: 10px;">IP 地址：</div>
+                                        <div style="font-size: 15pt; padding-top: 10px;">子网掩码：</div>
+                                        <div style="font-size: 15pt; padding-top: 10px;">DNS：</div>
                                     </div>
                                     <div id="eth0_inputs_entry" class="status_entry">
                                         <div style="padding-top: 6px;">
@@ -153,7 +153,7 @@
                                 </dev>
                             </div>
                             <div>
-                                <button id="network_apply" class="form-control btn eth0_apply">Apply</button>
+                                <button id="network_apply" class="form-control btn eth0_apply">应用</button>
                             </div>
                         </div>
                     </div>
@@ -161,42 +161,42 @@
                     <div id="wlan0_block" class="net_settings_block" align=center>
                         <div id="wlan0_block_fail" style="display: none;">
                             <img src="img/net-icons/fail.png">
-                            <div style="margin-top: 15px;">WIFI SERVICE IS FAILED</div>
+                            <div style="margin-top: 15px;">Wi-Fi 服务运行失败</div>
                         </div>
                         <div id="wlan0_block_nodongle" style="display: none;">
                             <img src="img/net-icons/nodongle.png">
-                            <div style="margin-top: 15px;">WIFI DONGLE IS NOT CONNECTED</div>
+                            <div style="margin-top: 15px;">未连接 Wi-Fi USB 适配器</div>
                         </div>
                         <div id="wlan0_block_entry" style="display: block;">
                             <div>
                                 <div style="position: absolute;"><img src="img/net-icons/wlan.png"></div>
-                                <div>Wireless connection status</div>
+                                <div>无线网络状态</div>
                             </div>
                             <dev id="wlan0_status">
                                 <div id="wlan0_inputs_labels" class="status_labels" style="min-height: 160px;">
-                                    <div style="font-size: 15pt; padding-top: 10px;">Mode:</div>
+                                    <div style="font-size: 15pt; padding-top: 10px;">模式：</div>
                                     <div style="font-size: 15pt; padding-top: 10px;">SSID:</div>
-                                    <div style="font-size: 15pt; padding-top: 10px;">Address:</div>
-                                    <div style="font-size: 15pt; padding-top: 10px;">Mask:</div>
+                                    <div style="font-size: 15pt; padding-top: 10px;">IP 地址：</div>
+                                    <div style="font-size: 15pt; padding-top: 10px;">子网掩码：</div>
                                 </div>
                                 <div id="wlan0_inputs_entry" class="status_entry" style="min-height: 160px;">
                                     <div style="padding-top: 10px;">
-                                        <label id="wlan0_mode_label" style="font-size: 13pt;">None</label>
+                                        <label id="wlan0_mode_label" style="font-size: 13pt;">无</label>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label id="wlan0_ssid_label" style="font-size: 13pt;">None</label>
+                                        <label id="wlan0_ssid_label" style="font-size: 13pt;">无</label>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label id="wlan0_address_label" style="font-size: 13pt;">None</label>
+                                        <label id="wlan0_address_label" style="font-size: 13pt;">无</label>
                                     </div>
                                     <div style="padding-top: 10px;">
-                                        <label id="wlan0_mask_label" style="font-size: 13pt;">None</label>
+                                        <label id="wlan0_mask_label" style="font-size: 13pt;">无</label>
                                     </div>
                                 </div>
                             </dev>
                             <select id="wlan0_mode" class="form-control type_select" style="display: none;">
-                                <option selected value="#wlan0_client_mode">Client Mode</option>
-                                <option value="#wlan0_ap_mode">Access Point Mode</option>
+                                <option selected value="#wlan0_client_mode">客户端模式</option>
+                                <option value="#wlan0_ap_mode">无线热点模式</option>
                             </select>
                             <!-- WLAN ACCESS POINT SETTINGS -->
                             <div id="wlan0_ap_mode" class="wlan0_entries" style="display: none; padding-top: 25px">
@@ -210,10 +210,9 @@
                                     </div>
                                 </div>
                                 <div id="ssid_check_len"
-                                    style="display: none; font-size: 10pt; color: #F00; text-align: right;">*Use 1 or
-                                    more characters</div>
+                                    style="display: none; font-size: 10pt; color: #F00; text-align: right;">*请输入至少 1 个字符</div>
                                 <div id="eth0_inputs_labels" class="status_labels">
-                                    <div style="font-size: 15pt;">Password:</div>
+                                    <div style="font-size: 15pt;">密码：</div>
                                 </div>
                                 <div id="eth0_inputs_entry" class="status_entry">
                                     <div>
@@ -222,12 +221,12 @@
                                 </div>
                                 <div id="pass_check_len"
                                     style="display: none; font-size: 10pt; padding-top: 15px; color: #F00; text-align: right;">
-                                    *Use 8 or more characters</div>
+                                    *请输入至少 8 个字符</div>
                                 <div id="pass_check_sym"
                                     style="display: none; font-size: 10pt; padding-top: 15px; color: #F00; text-align: right;">
-                                    *Contains incorrect symbols</div>
+                                    *包含不允许的字符</div>
                                 <div>
-                                    <button id="access_point_create" class="form-control btn eth0_apply">Create</button>
+                                    <button id="access_point_create" class="form-control btn eth0_apply">创建热点</button>
                                 </div>
                             </div>
                             <!-- WLAN CLIENT SETTINGS -->
@@ -238,9 +237,9 @@
                                             src="/assets/images/loader.gif" width="35px"></div>
                                     <div id="wifi_scan_result"></div>
                                 </div>
-                                <button id="refresh_list_btn" class="form-control btn eth0_apply">Refresh list</button>
+                                <button id="refresh_list_btn" class="form-control btn eth0_apply">刷新列表</button>
                                 <div id="separator_or">
-                                    OR
+                                    或者
                                 </div>
                                 <div style="display: block; padding-top: 25px">
                                     <div id="eth0_inputs_labels" class="status_labels">
@@ -252,10 +251,9 @@
                                         </div>
                                     </div>
                                     <div id="ssid_check_len_c"
-                                        style="display: none; font-size: 10pt; color: #F00; text-align: right;">*Use 1
-                                        or more characters</div>
+                                        style="display: none; font-size: 10pt; color: #F00; text-align: right;">*请输入至少 1 个字符</div>
                                     <div id="eth0_inputs_labels" class="status_labels">
-                                        <div style="font-size: 15pt;">Password:</div>
+                                        <div style="font-size: 15pt;">密码：</div>
                                     </div>
                                     <div id="eth0_inputs_entry" class="status_entry">
                                         <div>
@@ -265,14 +263,14 @@
                                     </div>
                                     <div id="pass_check_len_c"
                                         style="display: none; font-size: 10pt; padding-top: 15px; color: #F00; text-align: right;">
-                                        *Use 8 or more characters</div>
+                                        *请输入至少 8 个字符</div>
                                     <div id="pass_check_sym_c"
                                         style="display: none; font-size: 10pt; padding-top: 15px; color: #F00; text-align: right;">
-                                        *Contains incorrect symbols</div>
+                                        *包含不允许的字符</div>
 
                                     <div>
-                                        <button id="client_connect" class="form-control btn eth0_apply">Connect</button>
-                                        <button id="clear_entry" class="form-control btn eth0_apply">Clear</button>
+                                        <button id="client_connect" class="form-control btn eth0_apply">连接</button>
+                                        <button id="clear_entry" class="form-control btn eth0_apply">清空</button>
                                     </div>
                                 </div>
                             </div>
@@ -281,13 +279,12 @@
                                 <div style="display: block; padding-top: 25px">
                                     <div>
                                         <button id="client_disconnect"
-                                            class="form-control btn eth0_apply">Disconnect</button>
+                                            class="form-control btn eth0_apply">断开连接</button>
                                     </div>
 
                                     <div style="padding-top: 50px">
-                                        <div>If you apply new settings, please reboot the device to update the
-                                            configuration.</div>
-                                        <button id="client_reboot" class="form-control btn eth0_apply">Reboot</button>
+                                        <div>应用新设置后，请重启设备以更新网络配置。</div>
+                                        <button id="client_reboot" class="form-control btn eth0_apply">重启设备</button>
                                     </div>
                                 </div>
                             </div>
@@ -295,8 +292,7 @@
                             <div id="wlan0_ap_mode_work" class="wlan0_entries" style="display: none;">
                                 <div style="display: block; padding-top: 25px">
                                     <div>
-                                        <button id="ap_mode_stop" class="form-control btn eth0_apply">Stop AP
-                                            Mode</button>
+                                        <button id="ap_mode_stop" class="form-control btn eth0_apply">停止热点模式</button>
                                     </div>
                                 </div>
                             </div>
@@ -329,15 +325,14 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="bazaar_naLabel">Wi-Fi dongle missing</h4>
+                    <h4 class="modal-title" id="bazaar_naLabel">缺少 Wi-Fi 适配器</h4>
                 </div>
                 <div class="modal-body" style="text-align: center; font-size: 18px;">
-                    <p id="wtools_missing_msg">Wi-Fi USB dongle not connected to your RedPitaya. Please, connect it
-                        before working with network manager.</p>
+                    <p id="wtools_missing_msg">未连接 Wi-Fi USB 适配器。请连接后再使用网络管理。</p>
                 </div>
                 <div class="modal-footer">
                     <div class="bazaar-link" style="float: left; width: 50%;">
-                        <a href="/" style="border: 1px solid; left: 140px;" class="list-group-item btn">Close</a>
+                        <a href="/" style="border: 1px solid; left: 140px;" class="list-group-item btn">关闭</a>
                     </div>
                 </div>
             </div>
@@ -351,7 +346,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="bazaar_naLabel">Internet connection missing</h4>
+                    <h4 class="modal-title" id="bazaar_naLabel">无互联网连接</h4>
                 </div>
                 <div class="modal-body" style="text-align: center; font-size: 18px;">
                     <p id="wtools_missing_msg">Your RedPitaya has no connection to the Internet. Installing is not
@@ -372,20 +367,19 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="oops_label">Oops, something went wrong</h4>
+                    <h4 class="modal-title" id="oops_label">出现错误</h4>
                 </div>
                 <div class="modal-body" style="text-align: center; font-size: 18px;">
-                    <p>Please send us the report and help us to fix this issue</p>
-                    <p>Thank you!</p>
+                    <p>请发送诊断报告，帮助定位问题。</p>
                 </div>
                 <div class="modal-footer">
                     <div class="bazaar-link" style="float: left; width: 50%;">
                         <a href="#" style="border: 1px solid;  width: 100%" id="send_report_btn" data-dismiss="modal"
-                            class="list-group-item btn">Send report</a>
+                            class="list-group-item btn">发送报告</a>
                     </div>
                     <div class="bazaar-link" style="float: left; width: 50%;">
                         <a href="#" style="border: 1px solid;  width: 100%" id="restart_app_btn" data-dismiss="modal"
-                            class="list-group-item btn">Restart Application</a>
+                            class="list-group-item btn">重启应用</a>
                     </div>
                 </div>
             </div>

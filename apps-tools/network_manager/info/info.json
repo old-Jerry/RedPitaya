@@ -1,6 +1,6 @@
 {
-    "name": "Network Manager",
+    "name": "网络管理",
     "version": "VERSION",
     "revision": "REVISION",
-    "description": "Simple way to establish network connection with the Red Pitaya"
+    "description": "配置 Red Pitaya 的有线和无线网络连接"
 }
