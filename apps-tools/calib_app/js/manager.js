@@ -173,6 +173,9 @@
                 if (OBJ.model == "Z20"){
                     $('#a_mode').remove();
                 }
+                RP_I18N.apply(document);
+                RP_I18N.applyTextMap(document.body, window.CALIB_I18N_TEXT_MAP);
+                RP_I18N.mountSelector();
                 SW.initSubWindow()
                 OBJ.amSetModel(_value);
                 OBJ.adcSetModel(_value);

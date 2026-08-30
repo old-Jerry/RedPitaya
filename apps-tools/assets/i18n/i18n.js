@@ -60,6 +60,24 @@
         }));
     }
 
+    function applyTextMap(root, mapping) {
+        var scope = root || document.body;
+        if (!scope || !mapping) return;
+        var walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, null, false);
+        var nodes = [];
+        var node;
+        while ((node = walker.nextNode())) nodes.push(node);
+        nodes.forEach(function (textNode) {
+            var parentName = textNode.parentNode && textNode.parentNode.nodeName;
+            if (parentName === "SCRIPT" || parentName === "STYLE") return;
+            var raw = textNode.nodeValue;
+            var trimmed = raw.trim();
+            var key = mapping[trimmed];
+            if (!key) return;
+            textNode.nodeValue = raw.replace(trimmed, translate(key));
+        });
+    }
+
     function setLanguage(language) {
         var normalized = normalize(language);
         if (SUPPORTED.indexOf(normalized) === -1) normalized = DEFAULT_LANGUAGE;
@@ -114,8 +132,10 @@
     global.RP_I18N = {
         add: add,
         apply: apply,
+        applyTextMap: applyTextMap,
         getLanguage: function () { return currentLanguage; },
         init: init,
+        mountSelector: mountSelector,
         setLanguage: setLanguage,
         t: translate
     };
