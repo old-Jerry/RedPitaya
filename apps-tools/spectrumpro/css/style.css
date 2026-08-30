@@ -587,6 +587,21 @@ btn:active {
   cursor: pointer;
 }
 
+#jtk_fine_label {
+  position: absolute;
+  margin: 48px 0 0 46px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #333;
+  color: #ddd;
+  font-size: 12px;
+  line-height: 56px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 2;
+}
+
 #auto_scale {
   position: relative;
   margin-left: 25px;

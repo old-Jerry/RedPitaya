@@ -399,31 +399,31 @@
         SPEC.config.y_axis_mode = mode;
         if (mode === "dbm") {
             mode_value = 0;
-            $('.power-label').text('Amplitude [dBm]');
+            $('.power-label').text(RP_I18N.t('spec.amplitude_dbm'));
         }
         if (mode === "v") {
             mode_value = 1;
-            $('.power-label').text('Amplitude [V]');
+            $('.power-label').text(RP_I18N.t('spec.amplitude_v'));
         }
         if (mode === "dbu") {
             mode_value = 2;
-            $('.power-label').text('Amplitude [dBu]');
+            $('.power-label').text(RP_I18N.t('spec.amplitude_dbu'));
         }
         if (mode === "dbV") {
             mode_value = 3;
-            $('.power-label').text('Amplitude [dBV]');
+            $('.power-label').text(RP_I18N.t('spec.amplitude_dbv'));
         }
         if (mode === "dbuV") {
             mode_value = 4;
-            $('.power-label').text('Amplitude [dBµV]');
+            $('.power-label').text(RP_I18N.t('spec.amplitude_dbuv'));
         }
         if (mode === "mW") {
             mode_value = 5;
-            $('.power-label').text('Amplitude [mW]');
+            $('.power-label').text(RP_I18N.t('spec.amplitude_mw'));
         }
         if (mode === "dBW") {
             mode_value = 6;
-            $('.power-label').text('Amplitude [dBW]');
+            $('.power-label').text(RP_I18N.t('spec.amplitude_dbw'));
         }
         CLIENT.sendParametersEx({'y_axis_mode': {value : mode_value}});
         UI_GRAPH.resetZoom();

@@ -98,6 +98,8 @@
                 SPEC.rp_model = _value["RP_MODEL_STR"].value;
 
                 $('#BODY').load((SPEC.rp_model === "Z20_125_4CH" ? "4ch_adc.html" : "2ch_adc.html"), function() {
+                    RP_I18N.applyTextMap(document.body, window.SPEC_I18N_TEXT_MAP);
+                    RP_I18N.mountSelector();
                     $("#back_button").attr("href", SPEC.previousPageUrl)
 
                     console.log( "Load was performed." );
@@ -238,7 +240,7 @@
             $('#throughput_view2').text((CLIENT.compressed_data / 1024).toFixed(2) + "kB/s" + fps);
             if ($('#connection_icon').attr('src') !== '../assets/images/good_net.png')
                 $('#connection_icon').attr('src', '../assets/images/good_net.png');
-            $('#connection_meter').attr('title', 'It seems like your connection is ok');
+            $('#connection_meter').attr('title', RP_I18N.t('spec.connection_ok'));
             CLIENT.compressed_data = 0;
             CLIENT.decompressed_data = 0;
             CLIENT.fps = 0
