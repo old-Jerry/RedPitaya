@@ -361,14 +361,14 @@
                 $('#step_' + UPD.currentStep).find('.step_icon').find('img').attr('src', 'img/fail.png');
                 $('#step_' + UPD.currentStep).find('.step_icon').find('img').show()
                 $('#step_' + UPD.currentStep).find('.error_msg').show();
-                $('#step_' + UPD.currentStep).find('.error_msg').text("Error connecting to server")
+                $('#step_' + UPD.currentStep).find('.error_msg').text(RP_I18N.t("updater.error.connect"))
             },
             function onMessage(receive){
                 if (receive.install) {
 
                     if (receive.install.value == 0){
                         $('#step_' + UPD.currentStep).find('.info_msg').show();
-                        $('#step_' + UPD.currentStep).find('.info_msg').text("Success");
+                        $('#step_' + UPD.currentStep).find('.info_msg').text(RP_I18N.t("updater.success"));
                         RP_CLIENT.ws.send(JSON.stringify({ "reboot": {"type":"int", value: 0} }));
                         return;
                     }
@@ -377,7 +377,7 @@
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').attr('src', 'img/fail.png');
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').show()
                         $('#step_' + UPD.currentStep).find('.error_msg').show();
-                        $('#step_' + UPD.currentStep).find('.error_msg').text("Error open file")
+                        $('#step_' + UPD.currentStep).find('.error_msg').text(RP_I18N.t("updater.error.open"))
                         return;
                     }
 
@@ -385,7 +385,7 @@
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').attr('src', 'img/fail.png');
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').show()
                         $('#step_' + UPD.currentStep).find('.error_msg').show();
-                        $('#step_' + UPD.currentStep).find('.error_msg').text("Error calculate md5")
+                        $('#step_' + UPD.currentStep).find('.error_msg').text(RP_I18N.t("updater.error.md5"))
                         return;
                     }
 
@@ -393,7 +393,7 @@
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').attr('src', 'img/fail.png');
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').show()
                         $('#step_' + UPD.currentStep).find('.error_msg').show();
-                        $('#step_' + UPD.currentStep).find('.error_msg').text("Error create directory")
+                        $('#step_' + UPD.currentStep).find('.error_msg').text(RP_I18N.t("updater.error.directory"))
                         return;
                     }
 
@@ -401,14 +401,14 @@
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').attr('src', 'img/fail.png');
                         $('#step_' + UPD.currentStep).find('.step_icon').find('img').show()
                         $('#step_' + UPD.currentStep).find('.error_msg').show();
-                        $('#step_' + UPD.currentStep).find('.error_msg').text("Error unzip file")
+                        $('#step_' + UPD.currentStep).find('.error_msg').text(RP_I18N.t("updater.error.unzip"))
                         return;
                     }
 
                     $('#step_' + UPD.currentStep).find('.step_icon').find('img').attr('src', 'img/fail.png');
                     $('#step_' + UPD.currentStep).find('.step_icon').find('img').show()
                     $('#step_' + UPD.currentStep).find('.error_msg').show();
-                    $('#step_' + UPD.currentStep).find('.error_msg').text("Error. Undefined error")
+                    $('#step_' + UPD.currentStep).find('.error_msg').text(RP_I18N.t("updater.error.unknown"))
                 }
 
                 if (receive.install_done && receive.install_done.value == true){
@@ -424,7 +424,7 @@
                         var percent = ((uzCur / uzTotal) * 100).toFixed(2);
                         $('#percent_install').text(percent + "%");
                         $('#step_' + UPD.currentStep).find('.info_msg').show();
-                        $('#step_' + UPD.currentStep).find('.info_msg').text("Unzip: " + uzCur + "/" + uzTotal);
+                        $('#step_' + UPD.currentStep).find('.info_msg').text(RP_I18N.t("updater.progress.unzip") + ": " + uzCur + "/" + uzTotal);
                     }
                 }
 
@@ -442,7 +442,7 @@
                         var percent = ((iCur / iTotal) * 100).toFixed(2);
                         $('#percent_install').text(percent + "%");
                         $('#step_' + UPD.currentStep).find('.info_msg').show();
-                        $('#step_' + UPD.currentStep).find('.info_msg').text("Install: " + iCur + "/" + iTotal);
+                        $('#step_' + UPD.currentStep).find('.info_msg').text(RP_I18N.t("updater.progress.install") + ": " + iCur + "/" + iTotal);
                     }
                 }
 
@@ -487,14 +487,14 @@
                         $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').attr('src', 'img/fail.png');
                         $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').show()
                         $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').show();
-                        $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text("Error connecting to server")
+                        $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text(RP_I18N.t("updater.error.connect"))
                     },
                     function onMessage(receive){
                         if (receive.install) {
 
                             if (receive.install.value == 0){
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').show();
-                                $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').text("Success");
+                                $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').text(RP_I18N.t("updater.success"));
                                 RP_CLIENT.ws.send(JSON.stringify({ "reboot": {"type":"int", value: 0} }));
                                 return;
                             }
@@ -503,7 +503,7 @@
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').attr('src', 'img/fail.png');
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').show()
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').show();
-                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text("Error open file")
+                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text(RP_I18N.t("updater.error.open"))
                                 return;
                             }
 
@@ -511,7 +511,7 @@
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').attr('src', 'img/fail.png');
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').show()
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').show();
-                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text("Error calculate md5")
+                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text(RP_I18N.t("updater.error.md5"))
                                 return;
                             }
 
@@ -519,7 +519,7 @@
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').attr('src', 'img/fail.png');
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').show()
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').show();
-                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text("Error create directory")
+                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text(RP_I18N.t("updater.error.directory"))
                                 return;
                             }
 
@@ -527,14 +527,14 @@
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').attr('src', 'img/fail.png');
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').show()
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').show();
-                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text("Error unzip file")
+                                $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text(RP_I18N.t("updater.error.unzip"))
                                 return;
                             }
 
                             $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').attr('src', 'img/fail.png');
                             $('#step_' + UPD.currentStepLocal + '_local').find('.step_icon').find('img').show()
                             $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').show();
-                            $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text("Error. Undefined error")
+                            $('#step_' + UPD.currentStepLocal + '_local').find('.error_msg').text(RP_I18N.t("updater.error.unknown"))
                         }
 
                         if (receive.install_done && receive.install_done.value == true){
@@ -550,7 +550,7 @@
                                 var percent = ((uzCur / uzTotal) * 100).toFixed(2);
                                 $('#percent_install_local').text(percent + "%");
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').show();
-                                $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').text("Unzip: " + uzCur + "/" + uzTotal);
+                                $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').text(RP_I18N.t("updater.progress.unzip") + ": " + uzCur + "/" + uzTotal);
                             }
                         }
 
@@ -568,7 +568,7 @@
                                 var percent = ((iCur / iTotal) * 100).toFixed(2);
                                 $('#percent_install_local').text(percent + "%");
                                 $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').show();
-                                $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').text("Install: " + iCur + "/" + iTotal);
+                                $('#step_' + UPD.currentStepLocal + '_local').find('.info_msg').text(RP_I18N.t("updater.progress.install") + ": " + iCur + "/" + iTotal);
                             }
                         }
 
