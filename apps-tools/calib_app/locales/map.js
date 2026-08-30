@@ -100,5 +100,21 @@
         return source;
     }
 
-    window.CALIB_I18N = { format: format, hint: hint, stepName: stepName };
+    function instruction(source) {
+        var load = source.indexOf("(50 Ohm load)") !== -1;
+        var match = source.match(/^(?:Set jumpers to|Please set) (LV|HV) (?:position|mode) and connect /);
+        if (!match) return source;
+        var isJumpers = source.indexOf("Set jumpers") === 0;
+        var output = source.indexOf("OUT1") !== -1;
+        var fourChannels = source.indexOf("IN3") !== -1;
+        var key = isJumpers ? (output ? "calib.instruction.jumpers_output" : "calib.instruction.jumpers_external") :
+            (output ? "calib.instruction.filter_output" : "calib.instruction.filter_reference");
+        return format(key, {
+            mode: RP_I18N.getLanguage() === "zh-CN" ? (match[1] === "HV" ? "高压" : "低压") : match[1],
+            inputs: fourChannels ? (RP_I18N.getLanguage() === "zh-CN" ? "IN1、IN2、IN3、IN4" : "IN1, IN2, IN3 and IN4") : (RP_I18N.getLanguage() === "zh-CN" ? "IN1、IN2" : "IN1 and IN2"),
+            load: load ? (RP_I18N.getLanguage() === "zh-CN" ? "（50 Ω 负载）" : " (50 Ohm load)") : ""
+        });
+    }
+
+    window.CALIB_I18N = { format: format, hint: hint, instruction: instruction, stepName: stepName };
 }());

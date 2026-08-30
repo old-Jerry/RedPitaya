@@ -173,7 +173,7 @@
             if (param_name.value != -1){
                 $("#SW_F_VER").text(SW.calibVerStr(param_name.value))
             }else{
-                $("#SW_F_VER").text("ERROR")
+                $("#SW_F_VER").text(RP_I18N.t("calib.error"))
             }
             SW.setEnableShowButton($("#B_SHOW_F"),param_name.value)
         };
@@ -181,14 +181,14 @@
             if (param_name.value != -1){
                 $("#SW_F_COUNT").text(param_name.value)
             }else{
-                $("#SW_F_COUNT").text("ERROR")
+                $("#SW_F_COUNT").text(RP_I18N.t("calib.error"))
             }
         };
         SM.param_callbacks["SW_U_VER"] = function(param_name){
             if (param_name.value != -1){
                 $("#SW_U_VER").text(SW.calibVerStr(param_name.value))
             }else{
-                $("#SW_U_VER").text("ERROR")
+                $("#SW_U_VER").text(RP_I18N.t("calib.error"))
             }
             SW.setEnableShowButton($("#B_SHOW_U"),param_name.value)
         };
@@ -196,7 +196,7 @@
             if (param_name.value != -1){
                 $("#SW_U_COUNT").text(param_name.value)
             }else{
-                $("#SW_U_COUNT").text("ERROR")
+                $("#SW_U_COUNT").text(RP_I18N.t("calib.error"))
             }
         };
 
@@ -210,7 +210,7 @@
                 download("/calib_app/files/"+res.trim(),res.trim());
             }).fail(function(msg) {
                 console.log('Error',msg);
-                $('#info_dialog_label').text("Error download backup");
+                $('#info_dialog_label').text(RP_I18N.t("calib.error.download_backup"));
                 $('#info_dialog').modal('show');
             });
         });
@@ -225,7 +225,7 @@
                 download("/calib_app/files/"+res.trim(),res.trim());
             }).fail(function(msg) {
                 console.log('Error',msg);
-                $('#info_dialog_label').text("Error download backup");
+                $('#info_dialog_label').text(RP_I18N.t("calib.error.download_backup"));
                 $('#info_dialog').modal('show');
             });
         });
@@ -253,7 +253,7 @@
                     fileReader.readAsArrayBuffer(file); // read file as array buffer
                     const fsize = file.size
                     if (fsize > 1024 * 1024){
-                        $('#info_dialog_label').text("The file is very large. The size is limited to 1MB.");
+                        $('#info_dialog_label').text(RP_I18N.t("calib.error.file_too_large"));
                         $('#info_dialog').modal('show');
                         return
                     }
@@ -271,13 +271,13 @@
                                     CLIENT.sendParameters()
                                     OBJ.adcInitRequest();
                                 }else{
-                                    $('#info_dialog_label').text("Error upload backup");
+                                    $('#info_dialog_label').text(RP_I18N.t("calib.error.upload_backup"));
                                     $('#info_dialog').modal('show');
                                     console.log(res);
                                 }
                             },
                             error: function(e) {
-                                $('#info_dialog_label').text("Error upload backup");
+                                $('#info_dialog_label').text(RP_I18N.t("calib.error.upload_backup"));
                                 $('#info_dialog').modal('show');
                                 console.log(e);
                             },

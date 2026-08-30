@@ -295,7 +295,7 @@
         });
 
         $('#B_APPLY').on('click', function(ev) {
-            $("#dialog_reset_text").text("Save new calibration for all channels?");
+            $("#dialog_reset_text").text(RP_I18N.t("calib.confirm.save_all"));
             $('#ADC_RESET_FILTER_MODE').hide()
             $('#ADC_RESET_FILTER_ALL_CHANNELS').hide()
             $("#reset_ok_btn").off('click');
@@ -313,7 +313,7 @@
         });
 
         $('#B_RESET_DEFAULT').on('click', function(ev) {
-            $("#dialog_reset_text").text("Reset to default?");
+            $("#dialog_reset_text").text(RP_I18N.t("calib.confirm.reset_default"));
             $('#ADC_RESET_FILTER_MODE').show()
             $('#ADC_RESET_FILTER_ALL_CHANNELS').hide()
             $("#reset_ok_btn").off('click');
@@ -333,7 +333,7 @@
         });
 
         $('#B_RESET_FACTORY').on('click', function(ev) {
-            $("#dialog_reset_text").text("Reset to factory calibration?");
+            $("#dialog_reset_text").text(RP_I18N.t("calib.confirm.reset_factory"));
             $('#ADC_RESET_FILTER_MODE').hide()
             $('#ADC_RESET_FILTER_ALL_CHANNELS').hide()
             $("#reset_ok_btn").off('click');
@@ -385,7 +385,7 @@
 
         $('#B_CLOSE_ADC_CALIB').on('click', function(ev) {
             if (OBJ.adcCalibChange || OBJ.filterCalibChange) {
-                $("#dialog_reset_text").text("Save new parameters?");
+                $("#dialog_reset_text").text(RP_I18N.t("calib.confirm.save_parameters"));
                 $('#ADC_RESET_FILTER_MODE').hide()
                 $('#ADC_RESET_FILTER_ALL_CHANNELS').hide()
                 $("#reset_ok_btn").off('click');
@@ -414,7 +414,7 @@
         });
 
         $('#B_DEFAULT').on('click', function(ev) {
-            $("#dialog_reset_text").text("Set default parameters for current channel?");
+            $("#dialog_reset_text").text(RP_I18N.t("calib.confirm.default_channel"));
             $('#ADC_RESET_FILTER_MODE').hide()
             $('#ADC_RESET_FILTER_ALL_CHANNELS').show()
             $("#reset_ok_btn").off('click');
@@ -431,7 +431,7 @@
         });
 
         $('#B_DISABLE').on('click', function(ev) {
-            $("#dialog_reset_text").text("Set parameters that turn off the filter?");
+            $("#dialog_reset_text").text(RP_I18N.t("calib.confirm.disable_filter"));
             $('#ADC_RESET_FILTER_MODE').hide()
             $('#ADC_RESET_FILTER_ALL_CHANNELS').show()
             $("#reset_ok_btn").off('click');
