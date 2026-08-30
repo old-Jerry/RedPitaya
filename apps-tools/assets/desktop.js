@@ -14,14 +14,14 @@
     var board_ver = -1
 
     var groups = [{
-        name: "System",
-        description: "System tools for configuring your Red Pitaya",
+        name: "系统工具",
+        description: "配置 Red Pitaya 的系统工具",
         image_path: "../assets/images/pack/system",
         image_sizes: "128;256;512",
         applications: ["updater", "wifi", "licmngr", "calib_app"]
     }, {
-        name: "Development",
-        description: "Documentation, tutorials and a lot of interesting stuff",
+        name: "开发工具",
+        description: "开发文档、教程和编程工具",
         image_path: "../assets/images/pack/development",
         image_sizes: "128;256;512",
         applications: ["visualprogramming", "scpi", "tutorials", "fpga", "apis", "capps", "cmd", "hardwaredoc", "instructions", "github", "activelearning", "jupyter","web_ssh"]
@@ -68,6 +68,42 @@
                     if (default_applications[i].url[0] == "/")
                         default_applications[i].url = window.location.origin + default_applications[i].url;
                     applications.push(default_applications[i]);
+                }
+
+                // Simplified Chinese labels for the built-in application menu.
+                // Application IDs and URLs remain unchanged.
+                var zhNames = {
+                    "Logic analyser": "逻辑分析仪",
+                    "SDR transceiver compatible with HPSDR (THETIS)": "HPSDR (THETIS) 兼容 SDR 收发器",
+                    "DFT Spectrum Analyser": "DFT 频谱分析仪",
+                    "Data stream control": "数据流控制",
+                    "ARB manager": "任意波形管理器",
+                    "Bode Analyser": "波德分析仪",
+                    "LCR meter": "LCR 测量仪",
+                    "Impedance Analyser": "阻抗分析仪",
+                    "SDR receiver compatible with HPSDR": "HPSDR 兼容 SDR 接收机",
+                    "Oscilloscope": "示波器",
+                    "SDR transceiver": "SDR 收发器",
+                    "Vector Network Analyzer": "矢量网络分析仪",
+                    "SDR transceiver compatible with HPSDR": "HPSDR 兼容 SDR 收发器",
+                    "Red Pitaya Store": "Red Pitaya 商店",
+                    "Application marketplace": "应用市场",
+                    "Feedback": "意见反馈",
+                    "Unlock new benefits": "解锁新权益",
+                    "Sources": "源代码",
+                    "Documentation": "开发文档",
+                    "Create own WEB application": "创建 Web 应用",
+                    "Network manager": "网络管理",
+                    "Red Pitaya OS Update": "Red Pitaya 系统更新",
+                    "Calibration": "校准",
+                    "SCPI server": "SCPI 服务器",
+                    "Teaching materials": "教学资料",
+                    "Python programming": "Python 编程",
+                    "Web Console": "Web 终端"
+                };
+                for (var i = 0; i < applications.length; i++) {
+                    if (zhNames[applications[i].name])
+                        applications[i].name = zhNames[applications[i].name];
                 }
 
                 for (var i = 0; i < applications.length; i++) {
@@ -305,8 +341,8 @@
 
     var backButton = {
         id: "back",
-        name: "Back",
-        description: "Return to the desktop",
+        name: "返回",
+        description: "返回主界面",
         url: "#",
         image_path: "../assets/images/pack/back_button",
         image_sizes: "128;256;512",

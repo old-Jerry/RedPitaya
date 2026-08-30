@@ -37,21 +37,21 @@
     <link href="./assets/popupstack.css?1" rel="stylesheet" type="text/css" onerror="location.reload()" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>My Red Pitaya</title>
+    <title>我的 Red Pitaya</title>
 </head>
 
 <body class="user_lost connection_lost">
     <div id="loader-wrapper">
         <div id="loader"></div>
-        <div id="loader-desc">Getting the list of applications</div>
+        <div id="loader-desc">正在获取应用列表</div>
     </div>
     <div id="user-wrapper">
         <div id="user"></div>
-        <div id="user-desc">Device is already in use by another user.</div>
+        <div id="user-desc">设备正在被其他用户使用。</div>
     </div>
     <div id="pulse-wrapper">
         <div id="pulse"></div>
-        <div id="pulse-desc">Connection with device is lost.</div>
+        <div id="pulse-desc">与设备的连接已断开。</div>
     </div>
     <div id="main_content">
         <div id="header">
@@ -88,7 +88,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="bazaar_naLabel">Connection problem</h4>
+                    <h4 class="modal-title" id="bazaar_naLabel">连接问题</h4>
                 </div>
                 <div class="modal-body">
                     <p id="lic_failed">Licence verification failed! </p>
@@ -115,20 +115,20 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="bazaar_naLabel">Reboot</h4>
+                    <h4 class="modal-title" id="bazaar_naLabel">重启设备</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Would you like to reboot or poweroff your Red Pitaya?</p>
+                    <p>您想重启还是关闭 Red Pitaya？</p>
                 </div>
                 <div class="modal-footer">
                     <div class="bazaar-link" style="float: left;width: 30%;margin-right: 5%;">
-                        <a href="#" data-dismiss="modal" id="reboot_confirm" class="list-group-item btn">Reboot</a>
+                        <a href="#" data-dismiss="modal" id="reboot_confirm" class="list-group-item btn">重启</a>
                     </div>
                     <div class="bazaar-link" style="float: left; width: 30%;">
-                        <a href="#" data-dismiss="modal" id="poweroff_confirm" class="list-group-item btn">Poweroff</a>
+                        <a href="#" data-dismiss="modal" id="poweroff_confirm" class="list-group-item btn">关机</a>
                     </div>
                     <div class="bazaar-link" style="float: left;width: 30%;margin-left: 5%;">
-                        <a href="#" data-dismiss="modal" class="list-group-item btn">Cancel</a>
+                        <a href="#" data-dismiss="modal" class="list-group-item btn">取消</a>
                     </div>
                 </div>
             </div>
@@ -171,11 +171,10 @@
                     <div class="tab">
                         <h4 id="sysInfoTabHeader" class="tablinks modal-title unselectable"
                             onclick="openDialogTab(event, 'sysInfoTab')">
-                            System Info
+                            系统信息
                         </h4>
                         <h4 class="tablinks modal-title unselectable" onclick="openDialogTab(event, 'settingsTab')">
-                            System
-                            settings
+                            系统设置
                         </h4>
                     </div>
                 </div>
@@ -185,7 +184,7 @@
                             <col width="180px">
                             <col width="900px">
                             <tr style="height:40px;">
-                                <td>Board model:</td>
+                                <td>板卡型号：</td>
                                 <td>
                                     <a id="SI_B_MODEL">-</a>
                                     <div id="IS_VALID_MODEL" class="adaptive-tooltip" style="display: none;">
@@ -213,11 +212,11 @@
                                 <td><a id="SI_LINUX">-</a></td>
                             </tr>
                             <tr style="height:40px;">
-                                <td>CPU load:</td>
+                                <td>CPU 负载：</td>
                                 <td><a id="CPU_LOAD_ID">-</a></td>
                             </tr>
                             <tr style="height:40px;">
-                                <td>RAM size:</td>
+                                <td>RAM 容量：</td>
                                 <td><a id="RAM_SIZE_ID">-</a></td>
                             </tr>
                             <tr style="height:40px;">
@@ -225,7 +224,7 @@
                                 <td><a id="DMA_RAM_SIZE_ID">-</a></td>
                             </tr>
                             <tr style="height:40px;">
-                                <td>Temperature:</td>
+                                <td>温度：</td>
                                 <td><a id="TEMP_ID">-</a></td>
                             </tr>
                             <tr style="height:40px;">
@@ -233,7 +232,7 @@
                                 <td><a id="SD_SIZE_ID">-</a></td>
                             </tr>
                             <tr style="height:40px;">
-                                <td>Clock Rate:</td>
+                                <td>时钟频率：</td>
                                 <td><a id="CLOCK_RATE_ID">-</a></td>
                             </tr>
                         </table>
@@ -297,14 +296,14 @@
                             <col width="250px">
                             <col width="200px">
                             <tr style="height:60px;">
-                                <td>ADC base clock frequency:</td>
+                                <td>ADC 基础时钟频率：</td>
                                 <td>
                                     <input id="adc_base_rate" type="text" value="125000000" class="list-group-item btn"
                                         style="color: silver;">
                                 </td>
                             </tr>
                             <tr style="height:60px;">
-                                <td>Enable File System Consistency Check after boot:</td>
+                                <td>启动后检查文件系统一致性：</td>
                                 <td>
                                     <label class="control control-checkbox">Enable<input id="fsck_chbox" type="checkbox"
                                             checked="checked" style=" margin-left: 10px; " />
@@ -313,7 +312,7 @@
                                 </td>
                             </tr>
                             <tr style="height:60px;">
-                                <td>Turn on LED:</td>
+                                <td>打开 LED：</td>
                                 <td>
                                     <label class="control control-checkbox">Enable<input id="led_chbox" type="checkbox"
                                             checked="checked" style=" margin-left: 10px; " />
@@ -341,7 +340,7 @@
                             <col width="250px">
                             <col width="200px">
                             <tr style="height:60px;">
-                                <td>DAC base clock frequency:</td>
+                                <td>DAC 基础时钟频率：</td>
                                 <td>
                                     <input id="dac_base_rate" type="text" value="125000000" class="list-group-item btn"
                                         style="color: silver;">
@@ -356,7 +355,7 @@
                                 </td>
                             </tr>
                             <tr style="height:60px;">
-                                <td>Remove stored settings:</td>
+                                <td>删除已保存的设置：</td>
                                 <td>
                                     <div id="delete_settings_id" class="bazaar-link">
                                         <a class="list-group-item btn" style="margin-left: 25px;">DELETE</a>
@@ -368,7 +367,7 @@
                 </div>
                 <div class="modal-footer" style="margin: 0;">
                     <div class="bazaar-link">
-                        <a href="#" data-dismiss="modal" class="list-group-item btn">Close</a>
+                        <a href="#" data-dismiss="modal" class="list-group-item btn">关闭</a>
                     </div>
                 </div>
                 <script>
@@ -397,7 +396,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="bazaar_naLabel">External Connections</h4>
+                    <h4 class="modal-title" id="bazaar_naLabel">外部接口</h4>
                 </div>
                 <div class="modal-body" style="display: flex;padding: 0;">
                     <img id="pinoutId" path="../assets/images/pack/red_pitaya_pinout" sizes="640;1280;2560"
