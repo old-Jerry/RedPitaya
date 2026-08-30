@@ -14,6 +14,7 @@
     <link href="../assets/tooltip.css?1" rel="stylesheet" type="text/css">
     <link href="../assets/loader.css?1" rel="stylesheet" type="text/css" onerror="location.reload()" />
     <link href="./style.css?1" rel="stylesheet" type="text/css" onerror="location.reload()" />
+    <link href="../assets/i18n/i18n.css?1" rel="stylesheet" type="text/css" />
     <script src="../assets/bootstrap-3.0.0/js/jquery.js?1" onerror="location.reload()"></script>
     <script src="../assets/offline.min.js?1" onerror="location.reload()"></script>
     <script src="../assets/onlinecheck.js?1" onerror="location.reload()"></script>
@@ -23,6 +24,12 @@
     <script src="../assets/hammer.js?1" onerror="location.reload()"></script>
     <script src="../assets/pako.js" onerror="location.reload()"></script>
     <script src="../assets/black_list_app.js?1" onerror="location.reload()"></script>
+    <script src="../assets/i18n/i18n.js?1"></script>
+    <script src="../assets/i18n/locales/en.js?1"></script>
+    <script src="../assets/i18n/locales/zh-CN.js?1"></script>
+    <script src="./locales/en.js?1"></script>
+    <script src="./locales/zh-CN.js?1"></script>
+    <script>RP_I18N.init();</script>
     <script src="../assets/desktop.js?1" onerror="location.reload()"></script>
     <script src="../assets/browsercheck.js?1" onerror="location.reload()"></script>
     <script src="../assets/ecosystem.js?1" onerror="location.reload()"></script>
@@ -37,21 +44,21 @@
     <link href="./assets/popupstack.css?1" rel="stylesheet" type="text/css" onerror="location.reload()" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
-    <title>我的 Red Pitaya</title>
+    <title data-i18n="desktop.title">My Red Pitaya</title>
 </head>
 
 <body class="user_lost connection_lost">
     <div id="loader-wrapper">
         <div id="loader"></div>
-        <div id="loader-desc">正在获取应用列表</div>
+        <div id="loader-desc" data-i18n="desktop.loading">Getting the list of applications</div>
     </div>
     <div id="user-wrapper">
         <div id="user"></div>
-        <div id="user-desc">设备正在被其他用户使用。</div>
+        <div id="user-desc" data-i18n="desktop.device_in_use">Device is already in use by another user.</div>
     </div>
     <div id="pulse-wrapper">
         <div id="pulse"></div>
-        <div id="pulse-desc">与设备的连接已断开。</div>
+        <div id="pulse-desc" data-i18n="desktop.connection_lost">Connection with device is lost.</div>
     </div>
     <div id="main_content">
         <div id="header">
@@ -88,7 +95,7 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="bazaar_naLabel">连接问题</h4>
+                    <h4 class="modal-title" id="bazaar_naLabel" data-i18n="desktop.dialog.connection_problem">Connection problem</h4>
                 </div>
                 <div class="modal-body">
                     <p id="lic_failed">Licence verification failed! </p>
@@ -115,20 +122,20 @@
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                             aria-hidden="true">&times;</span></button>
-                    <h4 class="modal-title" id="bazaar_naLabel">重启设备</h4>
+                    <h4 class="modal-title" id="bazaar_naLabel" data-i18n="desktop.dialog.reboot_title">Reboot</h4>
                 </div>
                 <div class="modal-body">
-                    <p>您想重启还是关闭 Red Pitaya？</p>
+                    <p data-i18n="desktop.dialog.reboot_question">Would you like to reboot or power off your Red Pitaya?</p>
                 </div>
                 <div class="modal-footer">
                     <div class="bazaar-link" style="float: left;width: 30%;margin-right: 5%;">
-                        <a href="#" data-dismiss="modal" id="reboot_confirm" class="list-group-item btn">重启</a>
+                        <a href="#" data-dismiss="modal" id="reboot_confirm" class="list-group-item btn" data-i18n="common.reboot">Reboot</a>
                     </div>
                     <div class="bazaar-link" style="float: left; width: 30%;">
-                        <a href="#" data-dismiss="modal" id="poweroff_confirm" class="list-group-item btn">关机</a>
+                        <a href="#" data-dismiss="modal" id="poweroff_confirm" class="list-group-item btn" data-i18n="common.poweroff">Power off</a>
                     </div>
                     <div class="bazaar-link" style="float: left;width: 30%;margin-left: 5%;">
-                        <a href="#" data-dismiss="modal" class="list-group-item btn">取消</a>
+                        <a href="#" data-dismiss="modal" class="list-group-item btn" data-i18n="common.cancel">Cancel</a>
                     </div>
                 </div>
             </div>

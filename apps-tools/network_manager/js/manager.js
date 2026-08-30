@@ -45,7 +45,7 @@
                         $('#wlan0_mode').hide();
                         $('#wlan0_ap_mode_work').hide();
                         $('#wlan0_client_mode_link').show();
-                        $('#wlan0_mode_label').text("客户端");
+                        $('#wlan0_mode_label').text(RP_I18N.t("network.client"));
                         WIZARD.getConnectedWlan();
                         WIZARD.GetWlan0Status();
                     }
@@ -56,7 +56,7 @@
                         $('#wlan0_mode').hide();
                         $('#wlan0_ap_mode').hide();
                         $('#wlan0_ap_mode_work').show();
-                        $('#wlan0_mode_label').text("无线热点");
+                        $('#wlan0_mode_label').text(RP_I18N.t("network.access_point"));
                         WIZARD.restoreAPSSIDIfPossible();
                         WIZARD.GetWlan0Status();
                     }
@@ -72,10 +72,10 @@
                             $('#wlan0_mode').show();
                         }
                         $('#wlan0_client_mode').show();
-                        $('#wlan0_mode_label').text("无");
-                        $("#wlan0_ssid_label").text("无");
-                        $('#wlan0_address_label').text("无");
-                        $('#wlan0_mask_label').text("无");
+                        $('#wlan0_mode_label').text(RP_I18N.t("common.none"));
+                        $("#wlan0_ssid_label").text(RP_I18N.t("common.none"));
+                        $('#wlan0_address_label').text(RP_I18N.t("common.none"));
+                        $('#wlan0_mask_label').text(RP_I18N.t("common.none"));
                         if ($('#wlan0_mode').val() == "#wlan0_client_mode") {
                             $('#wlan0_ap_mode').hide();
                             $('#wlan0_client_mode').show();
@@ -560,7 +560,7 @@ $(document).ready(function() {
         var ssid_check = checkSSID_C( ssid );
         var pass_check = checkPassword_C( password );
         if (ssid_check && pass_check) {
-        if ( $('#client_connect').text() === "连接") {
+        if ($('#client_connect').attr("data-action") === "connect") {
                 WIZARD.state = "to_client";
                 WIZARD.startWaiting();
                 $.ajax({
@@ -619,7 +619,7 @@ $(document).ready(function() {
     });
 
     $('#access_point_create').click(function() {
-        if ($('#access_point_create').text() === "创建热点") {
+        if ($('#access_point_create').attr("data-action") === "create-ap") {
         	$('#ssid_check_len').hide();
         	$('#pass_check_len').hide();
             $('#pass_check_sym').hide();
