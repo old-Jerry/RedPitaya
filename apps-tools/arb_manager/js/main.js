@@ -272,7 +272,7 @@
             });
 
             var label_name = document.createElement('label');
-            label_name.innerText = 'Signal name: '
+            label_name.innerText = RP_I18N.t("arb.signal_name") + " "
             var input_item = document.createElement('input');
             input_item.setAttribute('maxlength', '10');
             input_item.value = value["name"]
@@ -371,27 +371,27 @@
         }
 
         if (SM.status.FILE_ERR === value){
-            $('#info_dialog_label').text("Error upload file");
+            $('#info_dialog_label').text(RP_I18N.t("arb.error.upload"));
             $('#info_dialog').modal('show');
         }
 
         if (SM.status.FILE_ERR_TO_LONG === value){
-            $('#info_dialog_label').text("There is a lot of data in the file.\nThere must be no more than 16384 samples");
+            $('#info_dialog_label').text(RP_I18N.t("arb.error.too_many_samples"));
             $('#info_dialog').modal('show');
         }
 
         if (SM.status.FILE_ERR_PARS_ERR === value){
-            $('#info_dialog_label').text("Error parsing file. The data must be in one column in the format ±X.XXX");
+            $('#info_dialog_label').text(RP_I18N.t("arb.error.column_format"));
             $('#info_dialog').modal('show');
         }
 
         if (SM.status.FILE_ERR_PARS_COE_ERR === value){
-            $('#info_dialog_label').text("Error parsing file. Data must be in BIN or DEC or HEX format and no larger than the ADC bit depth");
+            $('#info_dialog_label').text(RP_I18N.t("arb.error.coefficient_format"));
             $('#info_dialog').modal('show');
         }
 
         if (SM.status.FILE_ERR_CANT_CHANGE_COLOR === value){
-            $('#info_dialog_label').text("Error change color");
+            $('#info_dialog_label').text(RP_I18N.t("arb.error.color"));
             $('#info_dialog').modal('show');
         }
 
