@@ -14,13 +14,15 @@ do
     index="$APP_ROOT/$app_dir/index.html"
     [ -f "$index" ] || continue
     sed -i \
+        -e 's|/assets/i18n/i18n.css\(?[0-9]*\)\?"|/assets/i18n/i18n.css?5"|g' \
+        -e 's|/assets/i18n/i18n.js\(?[0-9]*\)\?"|/assets/i18n/i18n.js?5"|g' \
         -e 's|/assets/i18n/locales/common.en.js|/assets/i18n/locales/en.js|g' \
         -e 's|/assets/i18n/locales/common.zh-CN.js|/assets/i18n/locales/zh-CN.js|g' \
         "$index"
     grep -q "$MARKER" "$index" && continue
     sed -i '/<\/head>/i\
-<link rel="stylesheet" href="/assets/i18n/i18n.css">\
-<script src="/assets/i18n/i18n.js"><\/script>\
+<link rel="stylesheet" href="/assets/i18n/i18n.css?5">\
+<script src="/assets/i18n/i18n.js?5"><\/script>\
 <script src="/assets/i18n/locales/en.js"><\/script>\
 <script src="/assets/i18n/locales/zh-CN.js"><\/script>\
 <script src="/assets/i18n/integrations/pavel-demin-launchers.js"><\/script>' "$index"

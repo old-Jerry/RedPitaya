@@ -102,16 +102,28 @@
 
     function mountSelector(container) {
         if (document.getElementById("rp-language-selector")) return;
-        var host = container || document.body;
+        var statusHeader = !container && document.getElementById("header");
+        var navbarHost = !container && !statusHeader &&
+            document.querySelector(".navbar.navbar-inverse .container");
+        var nativeHost = statusHeader || navbarHost;
+        var host = container || nativeHost || document.body;
         var wrapper = document.createElement("div");
         wrapper.id = "rp-language-selector";
+        wrapper.className = nativeHost ? "rp-language-native" : "rp-language-floating";
+        if (navbarHost) wrapper.className += " rp-language-navbar";
         wrapper.setAttribute("aria-label", translate("common.language"));
         wrapper.innerHTML = "<span aria-hidden=\"true\">🌐</span>" +
             "<select id=\"rp-language-select\" aria-label=\"" + translate("common.language") + "\">" +
             "<option value=\"zh-CN\">简体中文</option>" +
             "<option value=\"en\">English</option>" +
             "</select>";
-        host.appendChild(wrapper);
+        if (nativeHost) {
+            nativeHost.classList.add("rp-i18n-host");
+            var description = nativeHost.querySelector("#description");
+            nativeHost.insertBefore(wrapper, description || null);
+        } else {
+            host.appendChild(wrapper);
+        }
         var select = document.getElementById("rp-language-select");
         select.value = currentLanguage;
         select.addEventListener("change", function () {
