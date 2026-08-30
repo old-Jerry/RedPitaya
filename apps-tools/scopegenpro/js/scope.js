@@ -320,7 +320,7 @@
         $('#usagemem_view').text(((OSC.g_TotalMemory - OSC.g_FreeMemory) / (1024 * 1024)).toFixed(2) + "MB");
         if ($('#connection_icon').attr('src') !== '../assets/images/good_net.png')
             $('#connection_icon').attr('src', '../assets/images/good_net.png');
-        $('#connection_meter').attr('title', 'It seems like your connection is ok');
+        $('#connection_meter').attr('title', RP_I18N.t('osc.connection_ok'));
         if (g_PacketsRecv < 5 || g_PacketsRecv > 1000) {
             if ($('#connection_icon').attr('src') !== '../assets/images/bad_net.pngg')
                 $('#connection_icon').attr('src', '../assets/images/bad_net.png');
@@ -351,6 +351,9 @@
         if (OSC.rp_model === "") {
             console.log("Model",_value.value)
             $('#BODY').load((_value.value === "Z20_125_4CH" ? "4ch_adc.html" : "2ch_adc.html"), function() {
+                RP_I18N.apply(document.body);
+                RP_I18N.applyTextMap(document.body, window.OSC_I18N_TEXT_MAP);
+                RP_I18N.mountSelector();
                 $("#back_button").attr("href", OSC.previousPageUrl)
                 OSC.rp_model = _value.value;
                 console.log( "Load was performed." );

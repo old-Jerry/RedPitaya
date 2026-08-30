@@ -159,7 +159,7 @@
 
     OSC.processTrigInfo = function(new_params) {
         var idx = new_params['OSC_TRIG_INFO'].value;
-        var states = ['STOPPED', 'AUTO', 'TRIG\'D', 'WAITING'];
+        var states = [RP_I18N.t('osc.status_stopped'), RP_I18N.t('osc.auto'), RP_I18N.t('osc.status_triggered'), RP_I18N.t('osc.status_waiting')];
         var colors = ['red', 'green', 'green', 'yellow'];
 
         $('#triginfo').html(states[idx]);
@@ -534,7 +534,7 @@
     OSC.setCurrentBuffer = function(new_params){
         if (OSC.params.orig['OSC_BUFFER_CURRENT']){
             var cur = OSC.params.orig['OSC_BUFFER_CURRENT'].value
-            $('#buffer_selector_info').html('Current buffer: ' + cur)
+            $('#buffer_selector_info').html(RP_I18N.t('osc.current_buffer') + cur)
             var max = OSC.params.orig['OSC_BUFFER_CURRENT'].max
             var min = OSC.params.orig['OSC_BUFFER_CURRENT'].min
             if (cur == max){

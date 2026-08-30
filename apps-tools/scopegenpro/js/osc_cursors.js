@@ -180,7 +180,7 @@
                     }
 
                     if (OSC.params.orig['OSC_TRIG_LIMIT'] !== undefined && (new_value > OSC.params.orig['OSC_TRIG_LIMIT'].value || new_value < -OSC.params.orig['OSC_TRIG_LIMIT'].value)) {
-                        $('#info_box').html('Trigger at its limit');
+                        $('#info_box').html(RP_I18N.t('osc.trigger_limit'));
                         if (new_value > OSC.params.orig['OSC_TRIG_LIMIT'].value)
                             new_value = OSC.params.orig['OSC_TRIG_LIMIT'].value
                         if (new_value < -OSC.params.orig['OSC_TRIG_LIMIT'].value)
@@ -188,7 +188,7 @@
                         $("#OSC_TRIG_LEVEL").attr("max", OSC.params.orig['OSC_TRIG_LIMIT'].value);
                         $("#OSC_TRIG_LEVEL").attr("min", -OSC.params.orig['OSC_TRIG_LIMIT'].value);
                     } else {
-                        $('#info_box').html('Trigger level ' + OSC.convertVoltage(new_value));
+                        $('#info_box').html(RP_I18N.t('osc.trigger_level') + ' ' + OSC.convertVoltage(new_value));
                     }
 
                     var probeAttenuation = 1;
@@ -382,7 +382,7 @@
         OSC.params.local['OSC_TIME_OFFSET'] = { value: (zero_pos - new_left - elem_width / 2 - 1) * ms_per_px };
         OSC.sendParams();
 
-        $('#info_box').html('Time offset ' + OSC.convertTime(new_value));
+        $('#info_box').html(RP_I18N.t('osc.time_offset_info') + ' ' + OSC.convertTime(new_value));
         $('#buf_time_offset').css('left', buf_width / 2 - buf_width * OSC.params.orig['OSC_VIEV_PART'].value / 2 + (new_left + 8) / ratio  - 5).show();
 
         if (new_value > ts * 5.0) {

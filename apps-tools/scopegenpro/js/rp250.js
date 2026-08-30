@@ -165,7 +165,7 @@
 
     OSC.updateExtClockEnable = function(state) {
         if (state == 0) {
-            $('#ext_clock_enable').text('EXT. CLOCK');
+            $('#ext_clock_enable').text(RP_I18N.t('osc.ext_clock'));
             $('#ext_clock_enable_view').hide();
         }
     }

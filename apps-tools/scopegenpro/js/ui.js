@@ -388,7 +388,7 @@
                 OSC.params.local['OSC_TIME_OFFSET'] = { value: (zero_pos - ui.position.left - ui.helper.width() / 2 - 1) * ms_per_px * ratio };
                 OSC.sendParams();
 
-                $('#info_box').html('Time offset ' + OSC.convertTime(new_value));
+                $('#info_box').html(RP_I18N.t('osc.time_offset_info') + ' ' + OSC.convertTime(new_value));
                 $('#time_offset_arrow').css('left', (buf_width + 2) / 2 + px_offset);
             },
             stop: function(ev, ui) {
@@ -744,12 +744,12 @@
 
         $('#ext_clock_enable').click(function() {
             var elem = $(this);
-            if (elem.text() == 'EXT. CLOCK') {
-                elem.html('&check; EXT. CLOCK');
+            if (elem.text() == RP_I18N.t('osc.ext_clock')) {
+                elem.html('&check; ' + RP_I18N.t('osc.ext_clock'));
                 $('#ext_clock_enable_view').show();
                 OSC.params.local['EXT_CLOCK_ENABLE'] = { value: 1 };
             } else {
-                elem.text('EXT. CLOCK');
+                elem.text(RP_I18N.t('osc.ext_clock'));
                 $('#ext_clock_enable_view').hide();
                 OSC.params.local['EXT_CLOCK_ENABLE'] = { value: 0 };
             }
@@ -780,11 +780,11 @@
 
         $('#sys_info').click(function() {
             var elem = $(this);
-            if (elem.text() == 'SYS INFO') {
-                elem.html('&check; SYS INFO');
+            if (elem.text() == RP_I18N.t('osc.sys_info')) {
+                elem.html('&check; ' + RP_I18N.t('osc.sys_info'));
                 $('#sys_info_view').show();
             } else {
-                elem.text('SYS INFO');
+                elem.text(RP_I18N.t('osc.sys_info'));
                 $('#sys_info_view').hide();
             }
         });

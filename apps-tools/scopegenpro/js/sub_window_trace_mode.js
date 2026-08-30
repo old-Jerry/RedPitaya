@@ -216,7 +216,7 @@
 
     SW_TM.setActiveChannel = function(new_params){
         SW_TM.activeChannel = new_params['OSC_SW_TM_CH_ACTIVE'].value
-        $("#SW_TM_TITLE").text("Trace Mode - Channel #" + SW_TM.activeChannel)
+        $("#SW_TM_TITLE").text(RP_I18N.t("osc.trace_channel") + SW_TM.activeChannel)
         const s = OSC.params.orig['CH' + SW_TM.activeChannel + '_SHOW_TRACE']
         if (s)
             SW_TM.setTraceEnable(SW_TM.activeChannel,s.value)
