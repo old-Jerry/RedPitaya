@@ -166,31 +166,31 @@
             // }
 
             if (baudrate <= 0) {
-                $('#warn-message').text("Baudrate value is incorrect");
+                $('#warn-message').text(RP_I18N.t("la.warn_baudrate"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (rx === "None" && tx === "None") {
-                $('#warn-message').text("Please specify channel for decoding");
+                $('#warn-message').text(RP_I18N.t("la.warn_channel"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (rx === tx) {
-                $('#warn-message').text("You can't specify same input lines");
+                $('#warn-message').text(RP_I18N.t("la.warn_same_inputs"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(rx.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#uart_serial option:selected').text() + " is already in use");
+                $('#warn-message').text($('#uart_serial option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(tx.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#uart_serial option:selected').text() + " is already in use");
+                $('#warn-message').text($('#uart_serial option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
@@ -221,13 +221,13 @@
             // var spi_speed = $('#spi_adc_speed').val();
 
             if (miso === "None" && mosi === "None") {
-                $('#warn-message').text("You have to specify MISO or MOSI for decoding");
+                $('#warn-message').text(RP_I18N.t("la.warn_miso_mosi"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (clk === "None") {
-                $('#warn-message').text("You have to specify CLK line");
+                $('#warn-message').text(RP_I18N.t("la.warn_clk"));
                 $('#warning-dialog').show();
                 return;
             }
@@ -241,31 +241,31 @@
 
             if (miso == mosi || miso == clk || miso == cs ||
                 mosi == clk || mosi == cs || clk == cs) {
-                $('#warn-message').text("You can't specify same input lines");
+                $('#warn-message').text(RP_I18N.t("la.warn_same_inputs"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(miso.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#spi_data option:selected').text() + " is already in use");
+                $('#warn-message').text($('#spi_data option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(mosi.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#spi_data option:selected').text() + " is already in use");
+                $('#warn-message').text($('#spi_data option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(clk.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#spi_clk option:selected').text() + " is already in use");
+                $('#warn-message').text($('#spi_clk option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(cs.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#spi_cs option:selected').text() + " is already in use");
+                $('#warn-message').text($('#spi_cs option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
@@ -302,25 +302,25 @@
 
 
             if (scl === "None" || sda === "None") {
-                $('#warn-message').text("You have to specify both lines for decoding");
+                $('#warn-message').text(RP_I18N.t("la.warn_both_lines"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (scl == sda) {
-                $('#warn-message').text("You can't specify same lines");
+                $('#warn-message').text(RP_I18N.t("la.warn_same_lines"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(scl.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#i2c_scl option:selected').text() + " is already in use");
+                $('#warn-message').text($('#i2c_scl option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (LA.isChannelInUse(parseInt(sda.replace("DIN",""))+1 , LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#i2c_sda option:selected').text() + " is already in use");
+                $('#warn-message').text($('#i2c_sda option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }
@@ -352,36 +352,36 @@
             // }
 
             if (nom_bitrate <= 0) {
-                $('#warn-message').text("Nominal bitrate value is incorrect");
+                $('#warn-message').text(RP_I18N.t("la.warn_nominal"));
                 $('#warning-dialog').show();
                 return;
             }
             if (fast_bitrate <= 0) {
-                $('#warn-message').text("Fast bitrate value is incorrect");
+                $('#warn-message').text(RP_I18N.t("la.warn_fast"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (parseInt(fast_bitrate) < parseInt(nom_bitrate)) {
-                $('#warn-message').text("Fast bitrate value is incorrect. Fast bitrate must be more than nominal.");
+                $('#warn-message').text(RP_I18N.t("la.warn_fast_nominal"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (sample_point < 0 || sample_point > 99.99 || sample_point == "") {
-                $('#warn-message').text("Sample point value is incorrect. Must in (0-99.99)%");
+                $('#warn-message').text(RP_I18N.t("la.warn_sample_point"));
                 $('#warning-dialog').show();
                 return;
             }
 
             if (can_rx === "None") {
-                $('#warn-message').text("You have to specify line for decoding");
+                $('#warn-message').text(RP_I18N.t("la.warn_line"));
                 $('#warning-dialog').show();
                 return;
             }
             var can_rx_num = parseInt(can_rx.replace("DIN",""))+1
             if (LA.isChannelInUse(can_rx_num, LA.state.bus_editing) != -1) {
-                $('#warn-message').text($('#can_rx option:selected').text() + " is already in use");
+                $('#warn-message').text($('#can_rx option:selected').text() + RP_I18N.t("la.already_in_use"));
                 $('#warning-dialog').show();
                 return;
             }

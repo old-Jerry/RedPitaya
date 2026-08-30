@@ -316,10 +316,10 @@
     LA.updateMeasureMode = function(params) {
         if (params["LA_MEASURE_MODE"].value == 1) {
             $('#stem').text('');
-            $('#select_mode').html('Ext. MODULE');
+            $('#select_mode').html(RP_I18N.t('la.ext_module_upper'));
         } else {
-            $('#stem').text('Ext. module used');
-            $('#select_mode').html('&check; Ext. MODULE');
+            $('#stem').text(RP_I18N.t('la.ext_module_used'));
+            $('#select_mode').html('&check; ' + RP_I18N.t('la.ext_module_upper'));
         }
     }
 

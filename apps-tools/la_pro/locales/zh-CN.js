@@ -1,0 +1,38 @@
+(function () {
+    "use strict";
+    RP_I18N.add("zh-CN", {
+        "la.device_busy":"设备正被其他用户使用。","la.connection_lost":"与设备的连接已断开。","la.export":"导出","la.graph":"图像",
+        "la.lines":"通道数据","la.data":"解码数据","la.settings":"设置","la.save":"保存","la.reset":"重置","la.menu":"菜单",
+        "la.upload_rle":"上传 RLE","la.sys_info":"系统信息","la.ext_module":"扩展模块","la.stop":"停止","la.run":"运行",
+        "la.digital":"数字通道","la.trigger":"触发","la.cursor":"游标","la.lines_upper":"通道","la.bus":"总线","la.data_upper":"数据",
+        "la.acquisition":"采集","la.data_samplerate":"数据采样率 [Hz]","la.display_radix":"显示进制","la.ascii_hex":"ASCII 与十六进制",
+        "la.fpga_samplerate":"FPGA 采样率","la.pretrigger":"触发前缓冲 [ms]","la.posttrigger":"触发后缓冲 [ms]",
+        "la.ignore":"X - 忽略","la.low":"0 - 低电平","la.high":"1 - 高电平","la.rising":"R - 上升沿","la.falling":"F - 下降沿",
+        "la.either":"E - 任意边沿","la.decoder_settings":"解码器设置","la.protocol":"协议：","la.samplerate":"采样率",
+        "la.msb_standard":"最高有效位优先（标准）","la.lsb_standard":"最低有效位优先（标准）","la.msb_first":"最高有效位优先",
+        "la.lsb_first":"最低有效位优先","la.bits8_standard":"每次传输 8 位（标准）","la.bits5":"每次传输 5 位",
+        "la.bits6":"每次传输 6 位","la.bits7":"每次传输 7 位","la.bits9":"每次传输 9 位",
+        "la.active_low":"使能线低电平有效","la.active_high":"使能线高电平有效","la.input_signals":"输入信号",
+        "la.input_signal":"输入信号","la.non_inverted":"不反相（标准）","la.inverted":"反相","la.address_display":"地址显示",
+        "la.shifted":"移位后","la.unshifted":"未移位","la.baudrate":"波特率","la.no_stop":"无停止位","la.stop05":"0.5 个停止位",
+        "la.stop1_standard":"1 个停止位（标准）","la.stop15":"1.5 个停止位","la.stop2":"2 个停止位","la.no_parity":"无奇偶校验",
+        "la.even":"偶校验","la.odd":"奇校验","la.always0":"始终为 0","la.always1":"始终为 1",
+        "la.nominal_bitrate":"标称比特率","la.fast_bitrate":"快速比特率","la.sample_point":"采样点",
+        "la.decode_problem":"无法解码逻辑数据？点击此处获取帮助","la.warning_default":"请检查解码器设置。","la.cancel":"取消",
+        "la.ok_upper":"确定","la.ok":"确定","la.decode_help":"解码帮助","la.download":"下载","la.generate":"生成",
+        "la.cpu_load":"CPU 负载：","la.cpu_temp":"CPU 温度：","la.memory_total":"内存总量：","la.free":"空闲：","la.usage":"使用率：",
+        "la.performance":"出现性能问题","la.save_settings":"保存当前设置","la.name":"名称：","la.error_title":"出错了",
+        "la.error_help":"请联系技术支持或重启应用","la.send_report":"发送报告","la.restart":"重启应用",
+        "la.external_connections":"外部连接","la.close":"关闭","la.decoded_data":"解码数据","la.filter":"筛选：","la.logic_analyzer":"逻辑分析仪",
+        "la.connection_ok":"连接状态正常","la.status_start":"点击“运行”开始","la.status_waiting":"等待触发","la.status_done":"采集完成",
+        "la.status_timeout":"触发超时","la.ext_module_upper":"扩展模块","la.ext_module_used":"正在使用扩展模块",
+        "la.file_too_large":"文件过大，大小不能超过 3 MB。","la.file_processing":"文件较大，处理可能需要 30 秒或更长时间。",
+        "la.upload_error":"文件上传失败","la.warn_baudrate":"波特率无效","la.warn_channel":"请选择用于解码的通道",
+        "la.warn_same_inputs":"输入通道不能相同","la.warn_miso_mosi":"请选择 MISO 或 MOSI 进行解码","la.warn_clk":"请选择 CLK 通道",
+        "la.warn_both_lines":"请选择两条解码通道","la.warn_same_lines":"所选通道不能相同","la.warn_nominal":"标称比特率无效",
+        "la.warn_fast":"快速比特率无效","la.warn_fast_nominal":"快速比特率必须大于标称比特率",
+        "la.warn_sample_point":"采样点必须在 0 到 99.99% 之间","la.warn_line":"请选择用于解码的通道","la.already_in_use":" 已被占用",
+        "la.help_intro":"如需解码帮助，请按以下步骤操作：","la.help_step1":"1. 下载包含逻辑数据的文件。",
+        "la.help_step2":"2. 将该文件附加到自动生成的电子邮件中。","la.time":"时间","la.time_offset":"时间偏移"
+    });
+}());

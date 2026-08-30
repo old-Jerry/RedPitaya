@@ -125,19 +125,19 @@
     LA.show_step = function(new_params) {
         step = new_params["LA_MEASURE_STATE"].value;
         if (step === 1){
-            $("#STATUS_MSG").text("CLICK RUN TO START").css('color', '#f00');
+            $("#STATUS_MSG").text(RP_I18N.t("la.status_start")).css('color', '#f00');
         }
 
         if (step === 2){
-            $("#STATUS_MSG").text("WAITING").css('color', '#ff0');
+            $("#STATUS_MSG").text(RP_I18N.t("la.status_waiting")).css('color', '#ff0');
         }
 
         if (step === 3){
-            $("#STATUS_MSG").text("DONE").css('color', '#0f0');
+            $("#STATUS_MSG").text(RP_I18N.t("la.status_done")).css('color', '#0f0');
         }
 
         if (step === 4){
-            $("#STATUS_MSG").text("TRIGGER TIMEOUT").css('color', '#f00');
+            $("#STATUS_MSG").text(RP_I18N.t("la.status_timeout")).css('color', '#f00');
         }
     }
 

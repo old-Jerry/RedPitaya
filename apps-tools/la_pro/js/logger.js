@@ -252,14 +252,14 @@
         if (LOGGER.log_header.includes(LOGGER.COLUMNS.TIME_OFFSET)){
             var td = document.createElement("th");
             td.classList.add("column_"+LOGGER.COLUMNS.TIME_OFFSET);
-            td.innerText = "Time offset"
+            td.innerText = RP_I18N.t("la.time_offset")
             tr.appendChild(td)
         }
 
         if (LOGGER.log_header.includes(LOGGER.COLUMNS.TIME_LEN)){
             var td = document.createElement("th");
             td.classList.add("column_"+LOGGER.COLUMNS.TIME_LEN);
-            td.innerText = "Time"
+            td.innerText = RP_I18N.t("la.time")
             tr.appendChild(td)
         }
 

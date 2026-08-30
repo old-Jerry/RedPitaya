@@ -356,10 +356,10 @@
         $('#sys_info').click(function() {
             var elem = $(this);
             if (elem.text() == 'SYS INFO') {
-                elem.html('&check; SYS INFO');
+                elem.html('&check; ' + RP_I18N.t('la.sys_info'));
                 $('#sys_info_view').show();
             } else {
-                elem.text('SYS INFO');
+                elem.text(RP_I18N.t('la.sys_info'));
                 $('#sys_info_view').hide();
             }
         });
@@ -425,7 +425,7 @@
                     fileReader.readAsArrayBuffer(file); // read file as array buffer
                     const fsize = file.size
                     if (fsize > 1024 * 1024 * 3){
-                        $('#info_dialog_label').text("The file is very large. The size is limited to 3MB.");
+                        $('#info_dialog_label').text(RP_I18N.t("la.file_too_large"));
                         $('#info_dialog').modal('show');
                         return
                     }
@@ -439,7 +439,7 @@
                             success: function() {
                                 console.log("Upload done");
                                 if (fsize > 1024 * 1024){
-                                    $('#info_dialog_label').text("The file is quite large. File processing time may take from 30 seconds.");
+                                    $('#info_dialog_label').text(RP_I18N.t("la.file_processing"));
                                     $('#info_dialog').modal('show');
                                 }
                                 setTimeout(() => {
@@ -448,7 +448,7 @@
                                 }, 1000);
                             },
                             error: function(e) {
-                                alert("Error upload file")
+                                alert(RP_I18N.t("la.upload_error"))
                                 console.log(e);
                             },
                             // Form data
