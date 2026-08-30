@@ -56,5 +56,23 @@
         "calib.factory_backup": "FACTORY BACKUP",
         "calib.user_backup": "USER BACKUP",
         "calib.user_restore": "USER RESTORE"
+        ,"calib.start": "START"
+        ,"calib.done": "DONE"
+        ,"calib.step.reset_default": "Reset to default"
+        ,"calib.step.prepare": "Prepare"
+        ,"calib.step.lv_mode": "LV mode"
+        ,"calib.step.hv_mode": "HV mode"
+        ,"calib.step.save_values": "Save calibration values"
+        ,"calib.step.complete": "Calibration complete"
+        ,"calib.step.enable_dac": "Enable DAC{gain}"
+        ,"calib.step.disable_dac": "Disable DAC{gain}"
+        ,"calib.step.adc_set": "ADC set in {mode}"
+        ,"calib.step.set_dc_mode": "Set {range} DC mode"
+        ,"calib.step.adc_adjust": "ADC {kind}{signal} ({range}){ac}"
+        ,"calib.step.dac_adjust": "DAC {kind} {stage} Stage{gain}"
+        ,"calib.hint.choose_filter": "Choose what to do with the filter"
+        ,"calib.hint.connect_ground": "Please {mode}connect {inputs}{load} to GND."
+        ,"calib.hint.connect_reference": "Please {mode}connect {inputs}{load} to reference DC source."
+        ,"calib.hint.connect_outputs": "Please {mode}connect OUT1 to IN1 and OUT2 to IN2{load}."
     });
 }());

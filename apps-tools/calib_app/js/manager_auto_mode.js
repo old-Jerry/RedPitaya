@@ -214,7 +214,7 @@
     }
 
     OBJ.amSetRowName = function(_id, _name) {
-        $("#" + _id + "_mode").text(_name);
+        $("#" + _id + "_mode").text(CALIB_I18N.stepName(_name));
     }
 
     OBJ.amSetName = function() {
@@ -235,10 +235,10 @@
             l.appendChild(a);
             a.setAttribute("href", "#");
             if (!OBJ.amStates[OBJ.amCurrentTest].hasOwnProperty("end")) {
-                a.innerHTML = "START";
+                a.textContent = RP_I18N.t("calib.start");
                 l.onclick = OBJ.amStartButtonPress;
             } else {
-                a.innerHTML = "DONE";
+                a.textContent = RP_I18N.t("calib.done");
                 l.onclick = OBJ.showMainMenu;
             }
         }
@@ -336,7 +336,7 @@
                 $("#am_dialog_img").attr("src", "");
             }
             if (OBJ.amStates[OBJ.amCurrentTest].hasOwnProperty("hint")) {
-                $("#am_dialog_text").text(OBJ.amStates[OBJ.amCurrentTest].hint);
+                $("#am_dialog_text").text(CALIB_I18N.hint(OBJ.amStates[OBJ.amCurrentTest].hint));
             } else {
                 $("#am_dialog_text").text("");
             }

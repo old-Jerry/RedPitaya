@@ -56,5 +56,23 @@
         "calib.factory_backup": "备份出厂数据",
         "calib.user_backup": "备份用户数据",
         "calib.user_restore": "恢复用户数据"
+        ,"calib.start": "开始"
+        ,"calib.done": "完成"
+        ,"calib.step.reset_default": "恢复默认值"
+        ,"calib.step.prepare": "准备"
+        ,"calib.step.lv_mode": "低压模式"
+        ,"calib.step.hv_mode": "高压模式"
+        ,"calib.step.save_values": "保存校准值"
+        ,"calib.step.complete": "校准完成"
+        ,"calib.step.enable_dac": "启用 DAC{gain}"
+        ,"calib.step.disable_dac": "禁用 DAC{gain}"
+        ,"calib.step.adc_set": "将 ADC 设为{mode}模式"
+        ,"calib.step.set_dc_mode": "设置 {range} 直流模式"
+        ,"calib.step.adc_adjust": "ADC {range}{signal}{kind}校准{ac}"
+        ,"calib.step.dac_adjust": "DAC {stage}级{kind}校准{gain}"
+        ,"calib.hint.choose_filter": "请选择滤波器参数的处理方式"
+        ,"calib.hint.connect_ground": "请{mode}将 {inputs}{load} 连接到 GND。"
+        ,"calib.hint.connect_reference": "请{mode}将 {inputs}{load} 连接到参考直流源。"
+        ,"calib.hint.connect_outputs": "请{mode}将 OUT1 连接到 IN1、OUT2 连接到 IN2{load}。"
     });
 }());

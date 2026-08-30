@@ -106,7 +106,7 @@
     }
 
     OBJ.famSetRowName = function(_id, _name) {
-        $("." + _id + "_mode").text(_name);
+        $("." + _id + "_mode").text(CALIB_I18N.stepName(_name));
     }
 
 
@@ -136,10 +136,10 @@
             l.appendChild(a);
             a.setAttribute("href", "#");
             if (!OBJ.famStates[OBJ.famCurrentTest].hasOwnProperty("end")) {
-                a.innerHTML = "START";
+                a.textContent = RP_I18N.t("calib.start");
                 l.onclick = OBJ.famStartButtonPress;
             } else {
-                a.innerHTML = "DONE";
+                a.textContent = RP_I18N.t("calib.done");
                 l.onclick = OBJ.showMainMenu;
             }
         }
