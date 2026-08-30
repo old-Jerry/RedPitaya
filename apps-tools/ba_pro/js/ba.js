@@ -370,7 +370,7 @@
     }
 
     function generateRoundedLinearScale(min, max, targetSteps = 10) {
-        if (min >= max) throw new Error("The minimum value must be less than the maximum");
+        if (min >= max) throw new Error(RP_I18N.t("ba.range_error"));
 
         const range = max - min;
         let roughStep = range / targetSteps;
@@ -504,10 +504,10 @@
             lastsig1.push([$("#BA_START_FREQ").val(),undefined])
             lastsig1.push([$("#BA_END_FREQ").val(),undefined])
         }
-        var data_points = [{ data: lastsig1, color: '#f3ec1a', label: "Amplitude" }, { data: lastsig2, color: '#31b44b', label: "Phase", yaxis: 2 }];
+        var data_points = [{ data: lastsig1, color: '#f3ec1a', label: RP_I18N.t("ba.legend_amplitude") }, { data: lastsig2, color: '#31b44b', label: RP_I18N.t("ba.legend_phase"), yaxis: 2 }];
         if ($('#BA_SHOWALL_BTN').hasClass('active')) {
-            data_points.push({ data: lastsig1_bad, color: '#d26500', label: "Invalid amplitude" });
-            data_points.push({ data: lastsig2_bad, color: '#685b00', label: "Invalid phase", yaxis: 2 });
+            data_points.push({ data: lastsig1_bad, color: '#d26500', label: RP_I18N.t("ba.invalid_amplitude") });
+            data_points.push({ data: lastsig2_bad, color: '#685b00', label: RP_I18N.t("ba.invalid_phase"), yaxis: 2 });
         }
         BA.graphCache.plot = $.plot(BA.graphCache.elem, data_points, options);
         $('.flot-text').css('color', '#aaaaaa');
@@ -552,10 +552,10 @@
             lastsig1_bad = BA.lastSignals["BA_SIGNAL_1_BAD"];
             lastsig2_bad = BA.lastSignals["BA_SIGNAL_2_BAD"];
 
-            var data_points = [{ data: lastsig1, color: '#f3ec1a', label: "Amplitude" }, { data: lastsig2, color: '#31b44b', label: "Phase", yaxis: 2 }];
+            var data_points = [{ data: lastsig1, color: '#f3ec1a', label: RP_I18N.t("ba.legend_amplitude") }, { data: lastsig2, color: '#31b44b', label: RP_I18N.t("ba.legend_phase"), yaxis: 2 }];
             if ($('#BA_SHOWALL_BTN').hasClass('active')) {
-                data_points.push({ data: lastsig1_bad, color: '#d26500', label: "Invalid amplitude" });
-                data_points.push({ data: lastsig2_bad, color: '#685b00', label: "Invalid phase", yaxis: 2 });
+                data_points.push({ data: lastsig1_bad, color: '#d26500', label: RP_I18N.t("ba.invalid_amplitude") });
+                data_points.push({ data: lastsig2_bad, color: '#685b00', label: RP_I18N.t("ba.invalid_phase"), yaxis: 2 });
             }
             BA.graphCache.plot.setData(data_points);
             BA.graphCache.elem.show();

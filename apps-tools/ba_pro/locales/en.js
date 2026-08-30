@@ -1,0 +1,38 @@
+(function () {
+    "use strict";
+    RP_I18N.add("en", {
+        "ba.device_busy": "Device is already in use by another user.",
+        "ba.connection_lost": "Connection with device is lost.",
+        "ba.calibrating": "Calibrating...",
+        "ba.menu": "MENU", "ba.export_graph": "Export Graph", "ba.export_csv": "Export as CSV",
+        "ba.reset": "RESET", "ba.calibrate_upper": "CALIBRATE", "ba.run": "RUN", "ba.stop": "STOP",
+        "ba.close": "Close", "ba.export": "Export", "ba.content": "Content", "ba.settings": "Settings",
+        "ba.content_settings": "Settings content", "ba.plot_settings": "Plot settings", "ba.cursors": "CURSORS",
+        "ba.calibration_upper": "CALIBRATION", "ba.start_frequency": "Start frequency [Hz]",
+        "ba.end_frequency": "End frequency [Hz]", "ba.steps": "Steps", "ba.analysis_scale": "Analysis scale",
+        "ba.linear_short": "Lin", "ba.log_short": "Log", "ba.analysis": "Analysis",
+        "ba.periods": "Number of periods", "ba.averaging": "Averaging", "ba.amplitude": "Amplitude [V]",
+        "ba.dc_bias": "DC bias [V]", "ba.probe_attenuation": "Probe attenuation",
+        "ba.input_attenuation": "Input attenuation", "ba.coupling": "Coupling",
+        "ba.invalid_input": "Invalid input data", "ba.show": "SHOW",
+        "ba.input_threshold": "Analysis input threshold ppV", "ba.gain_min": "Gain min [dB]",
+        "ba.gain_max": "Gain max [dB]", "ba.phase_min": "Phase min [deg]", "ba.phase_max": "Phase max [deg]",
+        "ba.autoscale": "AUTOSCALE", "ba.x_axis_scale": "X-axis scale", "ba.linear": "LINEAR",
+        "ba.logarithmic": "LOGARITHMIC", "ba.logarithmic_p2": "LOGARITHMIC-p2",
+        "ba.logarithmic_p10": "LOGARITHMIC-p10", "ba.cursor": "Cursor", "ba.measuring": "Measuring...",
+        "ba.current_step": "Current step:", "ba.current_frequency": "Current frequency:",
+        "ba.amplitude_db": "Amplitude [dB]", "ba.phase_deg": "Phase [deg]", "ba.frequency": "Frequency [Hz]",
+        "ba.calibration": "Calibration", "ba.calibration_help": "To calibrate the setup, connect IN2 to IN1 (bypass the DUT) and press CALIBRATE.",
+        "ba.calibrate": "Calibrate", "ba.reset_calibration": "Reset Calibration", "ba.licence_missing": "Licence missing",
+        "ba.demo_running": "Application is running in demo mode!", "ba.visit": "Please visit",
+        "ba.store": "Red Pitaya store", "ba.licence_suffix": "to get the licence.", "ba.get_licence": "Get licence",
+        "ba.error_title": "Oops, something went wrong", "ba.error_request": "Please send us the report and help us to fix this issue",
+        "ba.thanks": "Thank you!", "ba.send_report": "Send report", "ba.restart": "Restart Application",
+        "ba.throughput": "Throughput:", "ba.cpu_load": "CPU Load:", "ba.memory_total": "Memory total:",
+        "ba.free": "Free:", "ba.usage": "Usage:", "ba.performance": "Performance problem has occurred",
+        "ba.demo_details": "You are working in demo mode. Click here to see details.",
+        "ba.range_error": "The minimum value must be less than the maximum",
+        "ba.invalid_amplitude": "Invalid amplitude", "ba.invalid_phase": "Invalid phase",
+        "ba.legend_amplitude": "Amplitude", "ba.legend_phase": "Phase"
+    });
+}());
