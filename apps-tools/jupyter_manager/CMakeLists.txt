@@ -50,7 +50,7 @@ set(ZIP_FILE ../../../${APP}-${VERSION}-${REVISION}.zip)
 
 install(DIRECTORY ${CMAKE_SOURCE_DIR}/info DESTINATION ${BUILD_PATH})
 
-install(FILES nginx.conf DESTINATION ${BUILD_PATH})
+install(FILES nginx.conf requirements-i18n.txt install-i18n.sh DESTINATION ${BUILD_PATH})
 
 install(CODE "execute_process(COMMAND sed -i ${BUILD_PATH}/info/info.json -e \"s/REVISION/${REVISION}/\")")
 install(CODE "execute_process(COMMAND sed -i ${BUILD_PATH}/info/info.json -e \"s/VERSION/${VERSION}/\")")

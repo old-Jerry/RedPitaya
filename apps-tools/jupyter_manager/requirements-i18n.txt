@@ -1,0 +1,1 @@
+jupyterlab-language-pack-zh-CN==4.3.post3
