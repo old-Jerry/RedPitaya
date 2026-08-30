@@ -54,6 +54,14 @@
         Array.prototype.forEach.call(titles, function (element) {
             element.setAttribute("title", translate(element.getAttribute("data-i18n-title")));
         });
+        var onLabels = scope.querySelectorAll("[data-i18n-on]");
+        Array.prototype.forEach.call(onLabels, function (element) {
+            element.setAttribute("data-on", translate(element.getAttribute("data-i18n-on")));
+        });
+        var offLabels = scope.querySelectorAll("[data-i18n-off]");
+        Array.prototype.forEach.call(offLabels, function (element) {
+            element.setAttribute("data-off", translate(element.getAttribute("data-i18n-off")));
+        });
         document.documentElement.lang = currentLanguage;
         document.dispatchEvent(new CustomEvent("rp-language-applied", {
             detail: { language: currentLanguage }

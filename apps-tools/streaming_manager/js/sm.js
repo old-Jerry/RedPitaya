@@ -115,10 +115,10 @@ function promptFile(contentType, multiple) {
             })
             .done(function(msg) {
                 if (msg.responseText) {
-                    $('#info_dialog_label').text("All files removed: " + msg);
+                    $('#info_dialog_label').text(RP_I18N.t("stream.all_removed") + ": " + msg);
                     $('#info_dialog').modal('show');
                 } else {
-                    $('#info_dialog_label').text("All files removed");
+                    $('#info_dialog_label').text(RP_I18N.t("stream.all_removed"));
                     $('#info_dialog').modal('show');
                 }
 
@@ -131,17 +131,17 @@ function promptFile(contentType, multiple) {
         if (SM.ss_status_last != ss_status) {
             if (ss_status == 0) {
                 $('#ADC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#ADC_STATUS').html("Status: Stopped").css("color","#cdcccc")
+                $('#ADC_STATUS').html(RP_I18N.t("stream.status.stopped")).css("color","#cdcccc")
             }
 
             if (ss_status == 1) {
                 $('#ADC_STATUS_LED').attr("src","./img/green_led.png")
-                $('#ADC_STATUS').html("Status: Running").css("color","#cdcccc")
+                $('#ADC_STATUS').html(RP_I18N.t("stream.status.running")).css("color","#cdcccc")
             }
 
             if (ss_status == 2) {
                 $('#ADC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#ADC_STATUS').html("Status: Out of free disk space").css("color","#FF0000")
+                $('#ADC_STATUS').html(RP_I18N.t("stream.status.out_of_space")).css("color","#FF0000")
                 // $('#info_dialog_label').text("Out of free disk space");
                 // $('#info_dialog').modal('show');
                 CLIENT.parametersCache["SS_STATUS"] = { value: 0 };
@@ -150,7 +150,7 @@ function promptFile(contentType, multiple) {
 
             if (ss_status == 3) {
                 $('#ADC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#ADC_STATUS').html("Status: Data recording completed").css("color","#cdcccc")
+                $('#ADC_STATUS').html(RP_I18N.t("stream.status.recorded")).css("color","#cdcccc")
 
                 // $('#info_dialog_label').text("Data recording completed");
                 // $('#info_dialog').modal('show');
@@ -160,7 +160,7 @@ function promptFile(contentType, multiple) {
 
             if (ss_status == 4) {
                 $('#ADC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#ADC_STATUS').html("Status: Not enough memory").css("color","#FF0000")
+                $('#ADC_STATUS').html(RP_I18N.t("stream.status.memory")).css("color","#FF0000")
                 // $('#info_dialog_label').text("Out of free disk space");
                 // $('#info_dialog').modal('show');
                 CLIENT.parametersCache["SS_STATUS"] = { value: 0 };
@@ -169,14 +169,14 @@ function promptFile(contentType, multiple) {
 
             if (ss_status == 5) { // Mem modify status
                 $('#ADC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#ADC_STATUS').html("Status: Stopped").css("color","#cdcccc")
+                $('#ADC_STATUS').html(RP_I18N.t("stream.status.stopped")).css("color","#cdcccc")
                 CLIENT.parametersCache["SS_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
 
             if (ss_status == 6) { // No channels
                 $('#ADC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#ADC_STATUS').html("Status: No active channels").css("color","#cdcccc")
+                $('#ADC_STATUS').html(RP_I18N.t("stream.status.no_channels")).css("color","#cdcccc")
                 CLIENT.parametersCache["SS_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
@@ -189,59 +189,59 @@ function promptFile(contentType, multiple) {
         if (SM.ss_dac_status_last != status) {
             if (status == 0) {
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: Stopped").css("color","#cdcccc")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.stopped")).css("color","#cdcccc")
             }
 
             if (status == 1) {
                 $('#DAC_STATUS_LED').attr("src","./img/green_led.png")
-                $('#DAC_STATUS').html("Status: Running").css("color","#cdcccc")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.running")).css("color","#cdcccc")
             }
 
             if (status == 2) {
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: Done").css("color","#008000")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.done")).css("color","#008000")
                 CLIENT.parametersCache["SS_DAC_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
 
             if (status == 3) {
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: File is empty").css("color","#FF0000")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.empty")).css("color","#FF0000")
                 CLIENT.parametersCache["SS_DAC_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
 
             if (status == 4) {
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: File is broken").css("color","#FF0000")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.broken")).css("color","#FF0000")
                 CLIENT.parametersCache["SS_DAC_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
 
             if (status == 5) {
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: File is missing").css("color","#FF0000")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.missing")).css("color","#FF0000")
                 CLIENT.parametersCache["SS_DAC_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
 
             if (status == 6) {
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: Not enough memory").css("color","#FF0000")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.memory")).css("color","#FF0000")
                 CLIENT.parametersCache["SS_DAC_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
 
             if (status == 7) { // Mem modify status
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: Stopped").css("color","#cdcccc")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.stopped")).css("color","#cdcccc")
                 CLIENT.parametersCache["SS_DAC_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
 
             if (status == 8) {
                 $('#DAC_STATUS_LED').attr("src","./img/red_led.png")
-                $('#DAC_STATUS').html("Status: No active channels").css("color","#cdcccc")
+                $('#DAC_STATUS').html(RP_I18N.t("stream.status.no_channels")).css("color","#cdcccc")
                 CLIENT.parametersCache["SS_DAC_STATUS"] = { value: 0 };
                 CLIENT.sendParameters();
             }
@@ -557,18 +557,18 @@ function promptFile(contentType, multiple) {
         var str = ""
 
         if (param["SS_IS_MASTER"].value === 0) {
-            str = "(Unknown mode)"
+            str = "(" + RP_I18N.t("stream.mode.unknown") + ")"
         }
 
         if (param["SS_IS_MASTER"].value === 1) {
-            str = "(Master mode)"
+            str = "(" + RP_I18N.t("stream.mode.master") + ")"
         }
 
         if (param["SS_IS_MASTER"].value === 2) {
-            str = "(Slave mode)"
+            str = "(" + RP_I18N.t("stream.mode.slave") + ")"
         }
 
-        $("#TITLE_ID").text("Stream server application " + str)
+        $("#TITLE_ID").text(RP_I18N.t("stream.title") + " " + str)
     }
 
     SM.setRate = function(param) {
@@ -630,7 +630,7 @@ function promptFile(contentType, multiple) {
 
     SM.setSamplesCount = function(param) {
         var value = param["SS_PASS_SAMPLES"].value;
-        $("#SS_PASS_SAMPLES").html("Samples pass: " + value)
+        $("#SS_PASS_SAMPLES").html(RP_I18N.t("stream.samples_passed") + ": " + value)
     }
 
     SM.setWritedSize = function(param) {
@@ -642,7 +642,7 @@ function promptFile(contentType, multiple) {
         }else {
             value = ((value / (1024 * 1024))).toFixed(0) +" MB"
         }
-        $("#SS_WRITED_SIZE").html("Recorded to SD: " + value)
+        $("#SS_WRITED_SIZE").html(RP_I18N.t("stream.recorded_sd") + ": " + value)
     }
 
     SM.setChannel = function(param) {
